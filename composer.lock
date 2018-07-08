@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bf7c5d6ae48d1b2e7fbd135249c82a5",
+    "content-hash": "a8687b2f39acc81e1a2b9c791a47e199",
     "packages": [
         {
             "name": "evenement/evenement",
@@ -578,6 +578,49 @@
                 "uri"
             ],
             "time": "2018-01-15T21:00:49+00:00"
+        },
+        {
+            "name": "wyrihaximus/react-http-middleware-runner",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/reactphp-http-middleware-runner.git",
+                "reference": "61854520d9efc4609835ae5646524888ad254ae6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/reactphp-http-middleware-runner/zipball/61854520d9efc4609835ae5646524888ad254ae6",
+                "reference": "61854520d9efc4609835ae5646524888ad254ae6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2",
+                "psr/http-message": "^1.0",
+                "react/http": "^0.8.0",
+                "react/promise": "^2.5"
+            },
+            "require-dev": {
+                "api-clients/test-utilities": "^5.0",
+                "ringcentral/psr7": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WyriHaximus\\React\\Http\\Middleware\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "Middleware runner for react/http",
+            "time": "2018-07-08T11:53:17+00:00"
         }
     ],
     "packages-dev": [
