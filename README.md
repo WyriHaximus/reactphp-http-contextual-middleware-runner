@@ -23,19 +23,51 @@ In the following example the [`CORS`](https://developer.mozilla.org/en-US/docs/W
 the `/css/` and `/js/` by overwriting what comes out of [`christoph-kluge/reactphp-http-cors-middleware`](https://github.com/christoph-kluge/reactphp-http-cors-middleware).
 
 **Note: This is an actual use case from [`WyriMaps.net`](https://www.wyrimaps.net) where there is an embeddable map 
-`JS` files served from that domain.**
+`JS`, `CSS`, and images files served from that domain.**
 
 ```php
 $server = new Server([
     /** Other Middleware */
-    new ContextualMiddlewareRunner(function (ServerRequestInterface $request) {
-        return substr($request->getUri()->getPath(), 5) === '/css/' || substr($request->getUri()->getPath(), 4) === '/js/';
-    }, function (ServerRequestInterface $request, $next) {
-        /** @var ResponseInterface $response */
-        $response = $next($request);
-        return $response->withHeader('Access-Control-Allow-Origin','*');
-    }
-    new CorsMiddleware(), // Middleware from christoph-kluge/reactphp-http-cors-middleware, not shipping with this package!!!
+    new ContextualMiddlewareRunner(
+        function (ServerRequestInterface $request) {
+            if (substr($request->getUri()->getPath(), 0, 4) === '/js/') {
+                return true;
+            }
+
+            if (substr($request->getUri()->getPath(), 0, 5) === '/img/') {
+                return true;
+            }
+
+            if (substr($request->getUri()->getPath(), 0, 5) === '/css/') {
+                return true;
+            }
+
+            if ($request->getUri()->getPath() === '/wyri_haximus/ratchet/js/client.js') {
+                return true;
+            }
+
+            if ($request->getUri()->getPath() === '/config.js') {
+                return true;
+            }
+
+            return false;
+        },
+        [
+            new WithHeadersMiddleware([
+                'Access-Control-Allow-Origin' => '*',
+            ]),
+        ],
+        [
+            // Middleware from christoph-kluge/reactphp-http-cors-middleware, not shipping with this package!!!
+            // (But highly reccomended!)
+            new CorsMiddleware([
+                'allow_origin' => [
+                    'https://www.wyrimaps.net',
+                    'http://localhost:8787',
+                ],
+            ]),
+        ]
+    )
     /** Other Middleware */
 ]);
 ```
