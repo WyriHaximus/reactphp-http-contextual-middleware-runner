@@ -35,10 +35,6 @@ $server = new Server([
                 return true;
             }
 
-            if (substr($request->getUri()->getPath(), 0, 5) === '/img/') {
-                return true;
-            }
-
             if (substr($request->getUri()->getPath(), 0, 5) === '/css/') {
                 return true;
             }
