@@ -42,14 +42,6 @@ $server = new Server([
                 return true;
             }
 
-            if ($request->getUri()->getPath() === '/wyri_haximus/ratchet/js/client.js') {
-                return true;
-            }
-
-            if ($request->getUri()->getPath() === '/config.js') {
-                return true;
-            }
-
             return false;
         },
         [
@@ -63,7 +55,6 @@ $server = new Server([
             new CorsMiddleware([
                 'allow_origin' => [
                     'https://www.wyrimaps.net',
-                    'http://localhost:8787',
                 ],
             ]),
         ]
