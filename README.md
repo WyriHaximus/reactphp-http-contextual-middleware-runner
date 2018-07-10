@@ -20,7 +20,8 @@ This middleware removes the raw body from the request. Best used after the reque
 # Usage
 
 In the following example the [`CORS`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) to allow everything in 
-the `/css/` and `/js/` by overwriting what comes out of [`christoph-kluge/reactphp-http-cors-middleware`](https://github.com/christoph-kluge/reactphp-http-cors-middleware).
+the `/css/` and `/js/` and by falling back to [`christoph-kluge/reactphp-http-cors-middleware`](https://github.com/christoph-kluge/reactphp-http-cors-middleware) 
+for everything else.
 
 **Note: This is an actual use case from [`WyriMaps.net`](https://www.wyrimaps.net) where there is an embeddable map 
 `JS`, `CSS`, and images files served from that domain.**
