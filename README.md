@@ -1,6 +1,6 @@
 # Run a set of react/http middleware when a context checker passes
 
-[![Build Status](https://travis-ci.org/WyriHaximus/reactphp-http-contextual-middleware-runner.svg?branch=master)](https://travis-ci.org/WyriHaximus/reactphp-http-contextual-middleware-runner)
+[![Build Status](https://travis-ci.com/WyriHaximus/reactphp-http-contextual-middleware-runner.svg?branch=master)](https://travis-ci.com/WyriHaximus/reactphp-http-contextual-middleware-runner)
 [![Latest Stable Version](https://poser.pugx.org/WyriHaximus/react-http-contextual-middleware-runner/v/stable.png)](https://packagist.org/packages/WyriHaximus/react-http-contextual-middleware-runner)
 [![Total Downloads](https://poser.pugx.org/WyriHaximus/react-http-contextual-middleware-runner/downloads.png)](https://packagist.org/packages/WyriHaximus/react-http-contextual-middleware-runner)
 [![Code Coverage](https://scrutinizer-ci.com/g/WyriHaximus/reactphp-http-contextual-middleware-runner/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/WyriHaximus/reactphp-http-contextual-middleware-runner/?branch=master)
