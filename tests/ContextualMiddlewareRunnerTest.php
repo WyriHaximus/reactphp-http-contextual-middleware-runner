@@ -9,13 +9,16 @@ use React\Http\Response;
 use WyriHaximus\React\Http\Middleware\ContextualMiddlewareRunner;
 use function React\Promise\resolve;
 
+/**
+ * @internal
+ */
 final class ContextualMiddlewareRunnerTest extends TestCase
 {
-    public function testRejectWithResponse()
+    public function testRejectWithResponse(): void
     {
         $cmr = new ContextualMiddlewareRunner(function (ServerRequestInterface $request) {
             return false;
-        }, [function () {
+        }, [function (): void {
             $this->fail('The first middleware should never be reached');
         }]);
 
@@ -27,11 +30,11 @@ final class ContextualMiddlewareRunnerTest extends TestCase
         self::assertSame(321, $response->getStatusCode());
     }
 
-    public function testRejectWithResponseInPromise()
+    public function testRejectWithResponseInPromise(): void
     {
         $cmr = new ContextualMiddlewareRunner(function (ServerRequestInterface $request) {
             return false;
-        }, [function () {
+        }, [function (): void {
             $this->fail('The first middleware should never be reached');
         }]);
 
@@ -43,7 +46,7 @@ final class ContextualMiddlewareRunnerTest extends TestCase
         self::assertSame(321, $response->getStatusCode());
     }
 
-    public function testFulfill()
+    public function testFulfill(): void
     {
         $cmr = new ContextualMiddlewareRunner(function (ServerRequestInterface $request) {
             return true;
