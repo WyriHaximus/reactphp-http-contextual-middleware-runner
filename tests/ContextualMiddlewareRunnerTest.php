@@ -6,8 +6,8 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use React\Http\Response;
-use WyriHaximus\React\Http\Middleware\ContextualMiddlewareRunner;
 use function React\Promise\resolve;
+use WyriHaximus\React\Http\Middleware\ContextualMiddlewareRunner;
 
 /**
  * @internal
